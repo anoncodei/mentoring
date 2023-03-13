@@ -1,0 +1,17 @@
+---
+- name: Install NTP package
+  apt:
+    name: ntp
+    state: present
+
+- name: Configure NTP server address
+  template:
+    src: templates/ntp.conf.j2
+    dest: /etc/ntp.conf
+    mode: 0644
+
+- name: Start NTP service
+  service:
+    name: ntp
+    state: started
+    enabled: true

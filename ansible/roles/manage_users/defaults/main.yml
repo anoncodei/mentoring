@@ -1,0 +1,8 @@
+---
+users:
+  - name: Alex
+    password: password
+  - name: John
+    password: password
+  - name: Bill
+    password: password
