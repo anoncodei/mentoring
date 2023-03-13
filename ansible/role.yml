@@ -1,0 +1,10 @@
+---
+- name: Run roles
+  hosts: all
+  become: true
+  roles:
+    - apache_web_server
+    - cronjob
+    - install_packages
+    - manage_users
+    - ntp_service
