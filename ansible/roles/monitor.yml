@@ -1,0 +1,11 @@
+---
+- name: Run playbook prometheus and grafana
+  hosts: local
+  roles:
+    - prometheus
+    - grafana
+
+- name: Run playbook node exporter
+  hosts: server
+  roles:
+    - node_exporter

@@ -1,0 +1,19 @@
+---
+- name: Install prometheus
+  apt:
+    name: prometheus
+    state: latest
+  become: true
+
+- name: Upload prometheus configuration file
+  copy:
+    src: prometheus.yml
+    dest: /etc/prometheus/
+  become: true
+
+- name: Start prometheus service
+  service:
+    name: prometheus
+    state: started
+    enabled: true
+  become: true
